@@ -1,0 +1,18 @@
+{
+  "name": "bing_index_now",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "cron -f",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.4",
+    "node-fetch": "^3.3.2",
+    "pg": "^8.18.0"
+  }
+}
