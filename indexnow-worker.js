@@ -3,7 +3,7 @@ const { configDotenv } = require('dotenv');
 const { Pool } = pkg;
 
 configDotenv();
-
+console.log(process.env.DATABASE_URL);
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
@@ -20,6 +20,7 @@ async function fetchUnindexedArticles(client) {
     SELECT id, link
     FROM news_articles
     WHERE bing_index_status = FALSE
+    AND published_at > '2026-02-09 18:00:00'
     ORDER BY created_at ASC
     LIMIT $1
     FOR UPDATE SKIP LOCKED
